@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 /**
  * A fairly simple arraylist implementation extending custom list interface.
  * Default size is 2, grows by size * 2 when needed.
@@ -51,20 +53,40 @@ public class CustomArrayList<E> implements CustomListInterface<E> {
      */
     @Override
     public void add(Object o) {
+
+        int n;
+       int selectedN = add();
+
         //Implement this method
         // NOTE: if size >= maxSize we need to grow array
-
-        //growth check
-        if (maxSize == e.length) {
-            System.out.println("NO NEED TO EXTEND MEMORY");
+        //GROW CHECK
+        if (size == maxSize) {
+            System.out.println("No need to make the array grow");
         } else {
-            maxSize = maxSize * 2;
+            growArray();
+            System.out.println("growArray has been invoked because not enough space");
         }
 
-        //move it over forloop foward the end
+        //GET THE POSITION OF THE LAST OBJECT IN THE ARRAY
+            //set N with the add(function)
+            n = selectedN;
+
+            //there is a rotation of the array objects
+            for (int i = 0; i < n; i++) {
+                int k, lastArrayObject;
+            }
+
+        int lastArrayObject = array[array.length-1];
+            for (int k = array.length - 1; k > 0; k--) {
+                array[k] = array[k - 1];
+            }
+
+            array[0] = lastArrayObject;
+
+            //DISPLAY THE RESULTS
+        System.out.println();
 
     }
-
     /**
      * Adds object at specified index, advancing the size of the underlying array. This will
      * require us to shift all later elements further down the index order
