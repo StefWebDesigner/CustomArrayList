@@ -32,12 +32,14 @@ public class CustomLinkedList<T> implements CustomListInterface<T>, Iterable<T>{
     /**
      * Adds an object to the linked list at the specified index, splicing into place
      * and effectively shifting all further objects
-     * @param index position to add object
      * @param t object to be added
+     * @param index position to add object
+     * @return
      */
     @Override
-    public void add(T t, int index) {
+    public T add(T t, int index) {
         //Implement this method
+        return null;
     }
 
     /**

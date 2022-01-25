@@ -10,7 +10,7 @@ public interface CustomListInterface<E> {
     void add(E e);
 
     //adding an item to some index, and shifting those items at/after the index to make room.
-    void add(E e, int index);
+    E add(E e, int index);
 
     //return the element at the specified index
     E get(int index);

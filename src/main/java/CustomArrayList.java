@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 //
 //A fairly simple arraylist implementation extending custom list interface.
 //Default size is 2, grows by size * 2 when needed.
@@ -93,7 +91,7 @@ public class CustomArrayList<E> implements CustomListInterface<E> {
 //@throws IndexOutOfBoundsException
 //
     @Override
-    public void add(E e, int index) throws IndexOutOfBoundsException {
+    public E add(E e, int index) throws IndexOutOfBoundsException {
 
         if (size <= maxSize) {
             System.out.println("No need to make the array grow");
@@ -102,7 +100,17 @@ public class CustomArrayList<E> implements CustomListInterface<E> {
             System.out.println("growArray has been invoked because not enough space");
         }
 
+        for (int i = 0; i < array.length; i++) {
+            array[index] = array[i];    //IT GOING TO MATCH THAT TFGTB
+            array[i+1] = int temp;      //TAKE THE NEXT POSITION OUT IN TEMP
+            array[index] = array[i+1];  //REPLACE THE NEXT WITH THE NEW VARIABLE
+            array[i + 1] = array[i];
+            if(array[i] ) { // a statement similar to the bubble sorting
 
+
+            }
+
+        }
 
 
 //        for (int i = 0; i < array.length; i++) {
@@ -144,6 +152,7 @@ public class CustomArrayList<E> implements CustomListInterface<E> {
     @Override
     public void clear() {
         //Implement this method
+        return 0;
     }
 
 //
@@ -194,6 +203,8 @@ public class CustomArrayList<E> implements CustomListInterface<E> {
         //Extra NOTES:
         //arr = removeTheElement(arr, index);
     }
+
+        //MAKE THE REMOVED VALUED NULL AND SHIFT IT DOWN
 
 //returns size of array. This is the one greater than the index of the most advanced stored object,
 //not the maxSize which controls growth of the underlying array.
